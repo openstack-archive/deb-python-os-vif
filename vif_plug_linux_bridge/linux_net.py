@@ -84,9 +84,13 @@ def _ensure_vlan_privileged(vlan_num, bridge_interface, mac_address, mtu):
                                  check_exit_code=[0, 2, 254])
         processutils.execute('ip', 'link', 'set', interface, 'up',
                              check_exit_code=[0, 2, 254])
-    # NOTE(vish): set mtu every time to ensure that changes to mtu get
-    #             propogated
-    _set_device_mtu(interface, mtu)
+    if mtu:
+        # NOTE(vish): set mtu every time to ensure that changes to mtu get
+        #             propogated
+        _set_device_mtu(interface, mtu)
+    else:
+        LOG.debug("MTU not set on %(interface_name)s interface",
+                  {'interface_name': interface})
     return interface
 
 
@@ -122,6 +126,12 @@ def _ensure_bridge_privileged(bridge, interface, net_attrs, gateway,
         processutils.execute('brctl', 'setfd', bridge, 0)
         # processutils.execute('brctl setageing %s 10' % bridge)
         processutils.execute('brctl', 'stp', bridge, 'off')
+        disv6 = ('/proc/sys/net/ipv6/conf/%s/disable_ipv6' % bridge)
+        if os.path.exists(disv6):
+            processutils.execute('tee',
+                                 disv6,
+                                 process_input='1',
+                                 check_exit_code=[0, 1])
         # (danwent) bridge device MAC address can't be set directly.
         # instead it inherits the MAC address of the first device on the
         # bridge, which will either be the vlan interface, or a
@@ -175,7 +185,7 @@ def _ensure_bridge_privileged(bridge, interface, net_attrs, gateway,
 def _ensure_bridge_filtering(bridge, gateway):
     # This method leaves privsep usage to iptables manager
     # Don't forward traffic unless we were told to be a gateway
-    LOG.debug("ENsuring filtering %s to %s" % (bridge, gateway))
+    LOG.debug("Ensuring filtering %s to %s", bridge, gateway)
     global _IPTABLES_MANAGER
     ipv4_filter = _IPTABLES_MANAGER.ipv4['filter']
     if gateway:
