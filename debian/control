@@ -40,10 +40,10 @@ Build-Depends-Indep: python-coverage (>= 3.6),
                      python3-oslotest (>= 1:1.10.0),
                      python3-six (>= 1.9.0),
                      python3-stevedore (>= 1.10.0),
+                     python3-subunit (>= 0.0.18),
                      python3-testrepository (>= 0.0.18),
                      python3-testscenarios (>= 0.4),
                      python3-testtools (>= 1.4.0),
-                     python3-subunit (>= 0.0.18),
                      subunit (>= 0.0.18),
                      testrepository (>= 0.0.18),
 Standards-Version: 3.9.8
@@ -96,4 +96,3 @@ Description: Integration library between network and compute - doc
  A library for plugging and unplugging virtual interfaces in OpenStack.
  .
  This package contains the documentation.
-
