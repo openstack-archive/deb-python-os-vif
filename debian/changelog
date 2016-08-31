@@ -1,5 +1,5 @@
-python-os-vif (1.2.0-1) UNRELEASED; urgency=medium
+python-os-vif (1.2.0-1) experimental; urgency=medium
 
   * Initial release. (Closes: #834456)
 
- -- Ivan Udovichenko <iudovichenko@mirantis.com>  Mon, 15 Aug 2016 19:53:38 +0300
+ -- Ivan Udovichenko <iudovichenko@mirantis.com>  Wed, 31 Aug 2016 08:15:20 +0100
