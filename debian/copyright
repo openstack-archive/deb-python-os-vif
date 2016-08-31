@@ -3,15 +3,23 @@ Upstream-Name: os-vif
 Source: https://github.com/openstack/os-vif
 
 Files: *
-Copyright: (c) 2015, Jay Pipes
-License: Apache-2
+Copyright: 2015, Jay Pipes
+           2010-2016, OpenStack Foundation
+           2011, Nicira Inc
+           2011, Midokura KK
+           2011, X.commerce, a business unit of eBay Inc
+           2010, United States Government
+           2013-2014, Hewlett-Packard Development Company, L.P
+           2014, IBM Corp
+           2016, Red Hat, Inc
+License: Apache-2.0
 
 Files: debian/*
-Copyright: (c) 2016, Thomas Goirand <zigo@debian.org>
-           (c) 2016, Ivan Udovichenko <iudovichenko@mirantis.com>
-License: Apache-2
+Copyright: 2016, Thomas Goirand <zigo@debian.org>
+           2016, Ivan Udovichenko <iudovichenko@mirantis.com>
+License: Apache-2.0
 
-License: Apache-2
+License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
