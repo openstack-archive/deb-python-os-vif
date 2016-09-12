@@ -1,0 +1,11 @@
+Code-Review+1: Brian Haley <brian.haley@hpe.com>
+Code-Review+1: Sergey Belous <sbelous@mirantis.com>
+Code-Review+2: sean mooney <sean.k.mooney@intel.com>
+Code-Review+1: Takashi NATSUME <natsume.takashi@lab.ntt.co.jp>
+Workflow+1: sahid <sahid.ferdjaoui@redhat.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 31 Aug 2016 12:47:43 +0000
+Reviewed-on: https://review.openstack.org/361516
+Project: openstack/deb-python-os-vif
+Branch: refs/heads/master
