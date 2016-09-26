@@ -1,4 +1,5 @@
 [gerrit]
 host=review.openstack.org
 port=29418
-project=openstack/os-vif.git
+project=openstack/deb-python-os-vif.git
+defaultbranch=debian/newton
